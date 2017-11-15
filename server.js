@@ -16,8 +16,8 @@ app.use(morgan('combined'));
 var pool= new Pool(config);
 
 
-app.get('/',function(req,res){
- 
+
+
    pool.query('SELECT * from article',function(err,result){
        if(err){
            res.status(500).send(err.toString());
@@ -28,7 +28,6 @@ app.get('/',function(req,res){
        }
    }) 
     
-});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
