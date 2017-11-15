@@ -17,7 +17,7 @@ var pool= new Pool(config);
 
 
 app.get('/',function(req,res){
-    btn.onclick = function(){
+ 
    pool.query('SELECT * from article',function(err,result){
        if(err){
            res.status(500).send(err.toString());
@@ -27,7 +27,7 @@ app.get('/',function(req,res){
            res.send(JSON.stringify(result.rows));
        }
    }) 
-    }
+    
 });
 
 app.get('/', function (req, res) {
