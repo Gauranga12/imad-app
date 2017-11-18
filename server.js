@@ -18,7 +18,7 @@ var pool= new Pool(config);
 
 
 app.get('/test',function(req,res){
-   pool.query('SELECT * from article',function(err,result){
+   pool.query('SELECT * from person',function(err,result){
        if(err){
            res.status(500).send(err.toString());
           
